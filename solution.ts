@@ -122,3 +122,30 @@ const getUniqueValues = (arr1: any[], arr2: any[])=>{
 
     return newArr;
 }
+
+
+
+
+
+
+
+
+
+
+type Product = {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number;
+}
+
+const calculateTotalPrice = (products: Product[]): number=>{
+    if(products.length === 0) return 0;
+
+    const productTotals = products.map(product=> product.price * product.quantity)
+
+    const totalPrice = productTotals.reduce((sum, productTotal)=> sum + productTotal, 0)
+    return totalPrice;
+
+}
+
