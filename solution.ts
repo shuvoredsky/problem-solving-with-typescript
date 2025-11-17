@@ -14,6 +14,11 @@ const formatValue = (value: string | number | boolean): string | number | boolea
 
 
 
+
+
+
+
+
 const getLength = (value: string | any[])=>{
     if(typeof value === "string"){
         return value.length;
@@ -21,6 +26,10 @@ const getLength = (value: string | any[])=>{
         return value.length;
     }
 }
+
+
+
+
 
 
 class Person  {
@@ -37,32 +46,38 @@ class Person  {
     } 
 }
 
-// Create a function filterByRating that accepts an array of items, where each item has the following properties:
 
-// title (string)
-// rating (number between 0 and 5)
-// The function should return a new array containing only the items with a rating of 4 or more.
 
-// Requirements:
-// You must write the correct type for the function parameter and the return type.
-// Do not mutate the original array.
-// Sample Input:
+
+
+
 
 type Item = {
     title: string
     rating: number
 }
 
-const filterByRating = (value: Item[])=>{
+const filterByRating = (value: Item[]): Item[]=>{
     return value.filter(item=> item.rating >=4 )
      
 }
 
 
-const books = [
-  { title: 'Book A', rating: 3.9 },
-  { title: 'Book B', rating: 4.2 },
-  { title: 'Book C', rating: 4 },
-];
 
-console.log(filterByRating(books));
+
+
+
+
+
+type User = {
+    id: number,
+    name: string,
+    email: string,
+    isActive: boolean,
+}
+
+const filterActiveUsers = (value: User[]): User[]=>{
+    return value.filter(user=> user.isActive == true)
+}
+
+
