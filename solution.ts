@@ -81,3 +81,33 @@ const filterActiveUsers = (value: User[]): User[]=>{
 }
 
 
+
+
+
+
+// Define an interface Book with the following properties:
+
+// title (string)
+// author (string)
+// publishedYear (number)
+// isAvailable (boolean)
+// Then, create a function printBookDetails that accepts an object of type Book and prints its details to the console in the format: "Title: [title], Author: [author], Published: [publishedYear], Available: [Yes/No]".
+
+// Requirements:
+// You must define the Book interface correctly.
+// The printBookDetails function must accept an object that follows to the Book interface.
+
+interface Book {
+    title: string
+    author: string
+    publishedYear: number
+    isAvailable:boolean
+}
+const printBookDetails = (book: Book): void=>{
+return console.log(`Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${book.isAvailable? 'Yes' : 'No'}`);
+}
+
+
+
+
+
