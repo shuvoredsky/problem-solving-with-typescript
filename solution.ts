@@ -142,10 +142,15 @@ type Product = {
 const calculateTotalPrice = (products: Product[]): number=>{
     if(products.length === 0) return 0;
 
-    const productTotals = products.map(product=> product.price * product.quantity)
+    const productTotals = products.map(product => {
+        const discount = product.discount??0;
+        return product.price * product.quantity * (1-discount / 100);
+    })
 
-    const totalPrice = productTotals.reduce((sum, productTotal)=> sum + productTotal, 0)
-    return totalPrice;
+    const total = productTotals.reduce((sum, p)=> sum + p, 0)
 
+    return total;
 }
+
+
 
